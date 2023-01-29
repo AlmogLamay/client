@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Highlight from 'react-highlight';
 
 import io from 'socket.io-client';
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://server-new.onrender.com'); //http://localhost:5000');
 
 function CodeBlockPage() {
 	const { title } = useParams();
