@@ -75,8 +75,8 @@ function CodeBlockPage() {
 	}
 
 	const updateCodeOnChange = (event) => {
-		sendMessage(event.target.value);
 		updateCodeInDB(event.target.value);
+		sendMessage(event.target.value);
 		setCodeOnly(event.target.value);
 	};
 
