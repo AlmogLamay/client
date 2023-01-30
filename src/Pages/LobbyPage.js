@@ -9,7 +9,7 @@ function LobbyPage() {
 	};
 
 	useEffect(() => {
-		fetch('/getAllTitles')
+		fetch('https://server-new.onrender.com/getAllTitles')
 			.then((response) => response.json())
 			.then((data) => {
 				setAllTitles(data);
