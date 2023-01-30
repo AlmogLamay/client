@@ -7,14 +7,8 @@ function App() {
 	return (
 		<div className="app">
 			<Routes>
-				<Route
-					path="https://client-new.onrender.com/"
-					element={<LobbyPage />}
-				/>
-				<Route
-					path="https://client-new.onrender.com/codeblock/:title"
-					element={<CodeBlockPage />}
-				/>
+				<Route path="/" element={<LobbyPage />} />
+				<Route path="/codeblock/:title" element={<CodeBlockPage />} />
 			</Routes>
 		</div>
 	);
