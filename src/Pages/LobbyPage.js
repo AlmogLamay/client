@@ -5,7 +5,7 @@ function LobbyPage() {
 	const [allTitles, setAllTitles] = useState([{}]);
 
 	const handleClick = (event) => {
-		navigate('/codeblock/' + event.target.value);
+		navigate('https://client-new.onrender.com/codeblock/' + event.target.value);
 	};
 
 	useEffect(() => {
