@@ -43,7 +43,7 @@ function CodeBlockPage() {
 	});
 
 	const stage1 = () => {
-		fetch(`/getCodeBlockByTitle/${title}`)
+		fetch(`https://server-new.onrender.com/getCodeBlockByTitle/${title}`)
 			.then((response) => response.json())
 			.then((data) => {
 				//console.log('DATA: ', data);
@@ -54,7 +54,7 @@ function CodeBlockPage() {
 	};
 
 	const stage2 = () => {
-		fetch(`/getReadWrite/${title}`, {
+		fetch(`https://server-new.onrender.com/getReadWrite/${title}`, {
 			method: 'POST',
 		})
 			.then((response) => response.json())
@@ -65,7 +65,7 @@ function CodeBlockPage() {
 	};
 
 	function updateCodeInDB(c) {
-		fetch('/updateCode', {
+		fetch('https://server-new.onrender.com/updateCode', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
