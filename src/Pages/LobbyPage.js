@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 function LobbyPage() {
 	const navigate = useNavigate();
 	const [allTitles, setAllTitles] = useState([{}]);
+	const prodURL = 'https://server-new.onrender.com';
 
 	const handleClick = (event) => {
 		navigate('/codeblock/' + event.target.value);
 	};
 
 	useEffect(() => {
-		fetch('https://server-new.onrender.com/getAllTitles')
+		fetch(prodURL + '/getAllTitles')
 			.then((response) => response.json())
 			.then((data) => {
 				setAllTitles(data);

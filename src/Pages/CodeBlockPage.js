@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import Highlight from 'react-highlight';
 
 import io from 'socket.io-client';
-const socket = io.connect('https://server-new.onrender.com'); //http://localhost:5000');
+const prodURL = 'https://server-new.onrender.com';
+const socket = io.connect(prodURL);
 //const socket = io.connect('http://localhost:5000');
 
 function CodeBlockPage() {
@@ -43,7 +44,7 @@ function CodeBlockPage() {
 	});
 
 	const stage1 = () => {
-		fetch(`https://server-new.onrender.com/getCodeBlockByTitle/${title}`)
+		fetch(prodURL + `/getCodeBlockByTitle/${title}`)
 			.then((response) => response.json())
 			.then((data) => {
 				//console.log('DATA: ', data);
@@ -54,7 +55,7 @@ function CodeBlockPage() {
 	};
 
 	const stage2 = () => {
-		fetch(`https://server-new.onrender.com/getReadWrite/${title}`, {
+		fetch(prodURL + `/getReadWrite/${title}`, {
 			method: 'POST',
 		})
 			.then((response) => response.json())
@@ -65,7 +66,7 @@ function CodeBlockPage() {
 	};
 
 	function updateCodeInDB(c) {
-		fetch('https://server-new.onrender.com/updateCode', {
+		fetch(prodURL + '/updateCode', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
